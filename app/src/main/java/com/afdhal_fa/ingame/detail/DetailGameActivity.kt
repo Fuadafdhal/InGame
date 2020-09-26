@@ -2,14 +2,13 @@ package com.afdhal_fa.ingame.detail
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import com.afdhal_fa.core.data.Resource
+import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.ingame.R
-import com.afdhal_fa.ingame.core.data.Resource
-import com.afdhal_fa.ingame.core.domain.model.Game
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_detail_game.*

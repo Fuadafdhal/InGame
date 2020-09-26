@@ -1,7 +1,7 @@
 package com.afdhal_fa.ingame.di
 
-import com.afdhal_fa.ingame.core.domain.usecase.GameInteractor
-import com.afdhal_fa.ingame.core.domain.usecase.GamesUseCase
+import com.afdhal_fa.core.domain.usecase.GameInteractor
+import com.afdhal_fa.core.domain.usecase.GamesUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
