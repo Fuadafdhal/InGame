@@ -44,13 +44,13 @@ class HomeFragment : Fragment() {
             homeViewModel.games.observe(viewLifecycleOwner, Observer { tourism ->
                 if (tourism != null) {
                     when (tourism) {
-                        is Resource.Loading -> progress_bar.visibility = View.VISIBLE
+                        is Resource.Loading -> progress_shimmer.visibility = View.VISIBLE
                         is Resource.Success -> {
-                            progress_bar.visibility = View.GONE
+                            progress_shimmer.visibility = View.GONE
                             gamesAdapter.setData(tourism.data)
                         }
                         is Resource.Error -> {
-                            progress_bar.visibility = View.GONE
+                            progress_shimmer.visibility = View.GONE
                             view_error.visibility = View.VISIBLE
                             tv_error.text = tourism.message ?: getString(R.string.something_wrong)
                         }

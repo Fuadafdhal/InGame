@@ -69,6 +69,7 @@ class DetailGameActivity : AppCompatActivity() {
 
             Glide.with(this@DetailGameActivity)
                 .load(detailGame.imageUrl)
+                .placeholder(R.mipmap.image_placeholder)
                 .into(text_detail_image)
 
             var statusFavorite = detailGame.isFavorite
@@ -78,9 +79,6 @@ class DetailGameActivity : AppCompatActivity() {
                 statusFavorite = !statusFavorite
                 detailGameViewModel.setFavoriteGame(detailGame, statusFavorite)
                 setStatusFavorite(statusFavorite)
-                val toastMessage =
-                    if (statusFavorite) "${detailGame.name} added to Favorite" else "${detailGame.name} deleted from Favorite"
-                showToast(toastMessage)
             }
         }
     }
@@ -91,10 +89,6 @@ class DetailGameActivity : AppCompatActivity() {
         } else {
             fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_unactive))
         }
-    }
-
-    private fun showToast(text: String = "", duration: Int = Toast.LENGTH_SHORT) {
-        Toast.makeText(this, text, duration).show()
     }
 
     override fun onSupportNavigateUp(): Boolean {

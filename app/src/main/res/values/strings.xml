@@ -13,12 +13,11 @@
     <string name="no_data" tools:keep="@string/no_data">Empty Data</string>
 
 
-    <string name="title_original_name">Original Name</string>
-    <string name="default_text">-</string>
+
+    <string name="default_text">Lorem Ipsum Dolor</string>
     <string name="title_rating">Rating</string>
     <string name="title_release_date">Release Date</string>
     <string name="title_description">Description</string>
-    <string name="about_creator" tools:keep="@string/about_creator">About Creator</string>
     <string name="title_game_loading" tools:keep="@string/title_game_loading">Title Game Loading</string>
     <string name="rating_game_loading" tools:keep="@string/rating_game_loading">Rating Game Loading</string>
 

@@ -1,0 +1,9 @@
+package com.afdhal_fa.ingame
+
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class MyApplication : Application() {
+
+}
