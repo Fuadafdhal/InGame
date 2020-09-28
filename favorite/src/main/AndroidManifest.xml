@@ -13,8 +13,8 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application>
-        <activity android:name=".FavoriteActivity"></activity>
+    <application android:name="com.afdhal_fa.ingame.MyApplication">
+
     </application>
 
 </manifest>

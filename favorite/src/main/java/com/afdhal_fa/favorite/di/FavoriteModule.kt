@@ -1,4 +1,4 @@
-package com.afdhal_fa.core.data.remote.network
+package com.afdhal_fa.favorite.di
 
 /**
  * Copyright 2020 Muh Fuad Afdhal
@@ -16,8 +16,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-sealed class ApiResponse<out R> {
-    data class Success<out T>(val data: T) : ApiResponse<T>()
-    data class Error(val errorMessage: String) : ApiResponse<Nothing>()
-    object Empty : ApiResponse<Nothing>()
+import com.afdhal_fa.favorite.FavoriteViewModel
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
+
+val favoriteModule = module {
+    viewModel { FavoriteViewModel(get()) }
 }

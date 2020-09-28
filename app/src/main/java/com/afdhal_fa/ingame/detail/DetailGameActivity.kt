@@ -1,8 +1,23 @@
 package com.afdhal_fa.ingame.detail
 
+/**
+ * Copyright 2020 Muh Fuad Afdhal
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -10,15 +25,14 @@ import com.afdhal_fa.core.data.Resource
 import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.ingame.R
 import com.bumptech.glide.Glide
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_detail_game.*
 import kotlinx.android.synthetic.main.content_detail_game.*
 import kotlinx.android.synthetic.main.view_error.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
 class DetailGameActivity : AppCompatActivity() {
 
-    private val detailGameViewModel: DetailGameViewModel by viewModels()
+    private val detailGameViewModel: DetailGameViewModel by viewModel()
 
     companion object {
         const val EXTRA_DATA = "extra_data"
@@ -34,7 +48,6 @@ class DetailGameActivity : AppCompatActivity() {
             getDetailGame(detailGame.gameId)
         }
 
-//        inject toolbar to ActionBar after title was assign
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_back)

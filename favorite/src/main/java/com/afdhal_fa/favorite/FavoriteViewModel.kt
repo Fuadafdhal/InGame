@@ -1,4 +1,4 @@
-package com.afdhal_fa.core.data.remote.network
+package com.afdhal_fa.favorite
 
 /**
  * Copyright 2020 Muh Fuad Afdhal
@@ -16,8 +16,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-sealed class ApiResponse<out R> {
-    data class Success<out T>(val data: T) : ApiResponse<T>()
-    data class Error(val errorMessage: String) : ApiResponse<Nothing>()
-    object Empty : ApiResponse<Nothing>()
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
+import com.afdhal_fa.core.domain.usecase.GamesUseCase
+
+class FavoriteViewModel(gamesUseCase: GamesUseCase) : ViewModel() {
+    val favoriteGames = gamesUseCase.getFavoriteGames().asLiveData()
 }

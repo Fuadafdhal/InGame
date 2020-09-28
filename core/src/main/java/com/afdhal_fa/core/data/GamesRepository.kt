@@ -1,5 +1,21 @@
 package com.afdhal_fa.core.data
 
+/**
+ * Copyright 2020 Muh Fuad Afdhal
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+
 import com.afdhal_fa.core.data.local.LocalDataSource
 import com.afdhal_fa.core.data.remote.RemoteDataSource
 import com.afdhal_fa.core.data.remote.network.ApiResponse
@@ -8,15 +24,10 @@ import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.core.domain.repository.IGamesRepository
 import com.afdhal_fa.core.utils.AppExecutors
 import com.afdhal_fa.core.utils.DataMapper
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class GamesRepository @Inject constructor  (
+class GamesRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
@@ -46,12 +57,6 @@ class GamesRepository @Inject constructor  (
     override fun setFavoriteGames(game: Game, state: Boolean) {
         val gamesEntity = DataMapper.mapDomainToEntity(game)
         appExecutors.diskIO().execute { localDataSource.setFavoriteGames(gamesEntity, state) }
-    }
-
-    override fun clearFavoriteGames() {
-        GlobalScope.launch {
-            localDataSource.clearFavoriteGames()
-        }
     }
 
     override fun getDetailGame(id: String): Flow<Resource<Game>> {

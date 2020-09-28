@@ -20,5 +20,6 @@
     <string name="title_game_loading" tools:keep="@string/title_game_loading">Title Game Loading</string>
     <string name="rating_game_loading" tools:keep="@string/rating_game_loading">Rating Game Loading</string>
     <string name="title_favorite">Favorite</string>
+    <string name="image_description">image</string>
 
 </resources>
