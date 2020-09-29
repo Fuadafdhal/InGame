@@ -20,8 +20,10 @@ import com.afdhal_fa.core.data.Resource
 import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.core.domain.repository.IGamesRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class GameInteractor(private val gamesRepository: IGamesRepository) : GamesUseCase {
+class GameInteractor @Inject constructor(private val gamesRepository: IGamesRepository) :
+    GamesUseCase {
     override fun getAllGames(page: Int, page_size: Int): Flow<Resource<List<Game>>> =
         gamesRepository.getAllGames(page, page_size)
 

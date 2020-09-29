@@ -17,31 +17,7 @@ limitations under the License.
  */
 
 import android.app.Application
-import com.afdhal_fa.core.di.databaseModule
-import com.afdhal_fa.core.di.networkModule
-import com.afdhal_fa.core.di.repositoryModule
-import com.afdhal_fa.ingame.di.useCaseModule
-import com.afdhal_fa.ingame.di.viewModelModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.startKoin
-import org.koin.core.logger.Level
+import dagger.hilt.android.HiltAndroidApp
 
-class MyApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        startKoin {
-            androidLogger(Level.ERROR)
-            androidContext(this@MyApplication)
-            modules(
-                listOf(
-                    databaseModule,
-                    networkModule,
-                    repositoryModule,
-                    useCaseModule,
-                    viewModelModule
-                )
-            )
-        }
-    }
-}
+@HiltAndroidApp
+class MyApplication : Application() 

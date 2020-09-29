@@ -16,12 +16,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.core.domain.usecase.GamesUseCase
 
-class DetailGameViewModel(private var gameUseCase: GamesUseCase) : ViewModel() {
+class DetailGameViewModel @ViewModelInject constructor(private var gameUseCase: GamesUseCase) :
+    ViewModel() {
     fun getDetailGame(id: String) = gameUseCase.getDetailGame(id).asLiveData()
     fun setFavoriteGame(game: Game, newStatus: Boolean) =
         gameUseCase.setFavoriteGames(game, newStatus)

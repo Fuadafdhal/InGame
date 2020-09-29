@@ -22,18 +22,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afdhal_fa.core.ui.GamesAdapter
-import com.afdhal_fa.favorite.di.favoriteModule
 import com.afdhal_fa.ingame.detail.DetailGameActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_favorite.*
-import org.koin.android.viewmodel.ext.android.viewModel
-import org.koin.core.context.loadKoinModules
 
+@AndroidEntryPoint
 class FavoriteFragment : Fragment() {
 
-    private val favoriteViewModel: FavoriteViewModel by viewModel()
+    private val favoriteViewModel: FavoriteViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,12 +45,10 @@ class FavoriteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loadKoinModules(favoriteModule)
-
         getFavoriteData()
     }
 
-    private fun getFavoriteData () {
+    private fun getFavoriteData() {
         val gamesAdapter = GamesAdapter()
         gamesAdapter.onItemClick = { selectedData ->
             val intent = Intent(this.context, DetailGameActivity::class.java)

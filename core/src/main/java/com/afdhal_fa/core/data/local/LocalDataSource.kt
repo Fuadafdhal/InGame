@@ -19,8 +19,11 @@ limitations under the License.
 import com.afdhal_fa.core.data.local.entity.GameEntity
 import com.afdhal_fa.core.data.local.room.GamesDao
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class LocalDataSource constructor(private val gamesDao: GamesDao) {
+@Singleton
+class LocalDataSource @Inject constructor(private val gamesDao: GamesDao) {
 
     fun getAllGames(): Flow<List<GameEntity>> = gamesDao.getAllGames()
     fun getFavoriteGames(): Flow<List<GameEntity>> = gamesDao.getFavoriteGames()

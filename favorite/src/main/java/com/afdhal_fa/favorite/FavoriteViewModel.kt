@@ -16,10 +16,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.afdhal_fa.core.domain.usecase.GamesUseCase
 
-class FavoriteViewModel(gamesUseCase: GamesUseCase) : ViewModel() {
+class FavoriteViewModel @ViewModelInject constructor(gamesUseCase: GamesUseCase) : ViewModel() {
     val favoriteGames = gamesUseCase.getFavoriteGames().asLiveData()
 }

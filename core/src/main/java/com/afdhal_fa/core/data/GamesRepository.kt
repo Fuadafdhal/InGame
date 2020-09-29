@@ -26,8 +26,11 @@ import com.afdhal_fa.core.utils.AppExecutors
 import com.afdhal_fa.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class GamesRepository(
+@Singleton
+class GamesRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
@@ -65,9 +68,11 @@ class GamesRepository(
                 return localDataSource.getDetailGame(id).map { DataMapper.mapEntityToDomain(it) }
             }
 
-            override fun shouldFetch(data: Game?): Boolean = data === null || data.description === null
+            override fun shouldFetch(data: Game?): Boolean =
+                data === null || data.description === null
 
-            override suspend fun createCall(): Flow<ApiResponse<GameResponse>> = remoteDataSource.getDetailGame(id)
+            override suspend fun createCall(): Flow<ApiResponse<GameResponse>> =
+                remoteDataSource.getDetailGame(id)
 
             override suspend fun saveCallResult(data: GameResponse) {
                 val gameDetail = DataMapper.mapResponsesDetailToEntities(data)

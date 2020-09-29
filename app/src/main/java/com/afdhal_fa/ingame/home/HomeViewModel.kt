@@ -16,6 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -23,10 +24,9 @@ import com.afdhal_fa.core.data.Resource
 import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.core.domain.usecase.GamesUseCase
 
-class HomeViewModel(val gamesUseCase: GamesUseCase) : ViewModel() {
+class HomeViewModel @ViewModelInject constructor(val gamesUseCase: GamesUseCase) : ViewModel() {
 
     fun games(page: Int, pageSize: Int): LiveData<Resource<List<Game>>> {
-
         return gamesUseCase.getAllGames(page, pageSize).asLiveData()
     }
 

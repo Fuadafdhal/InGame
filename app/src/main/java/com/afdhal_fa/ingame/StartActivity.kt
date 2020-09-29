@@ -25,6 +25,12 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import kotlinx.android.synthetic.main.activity_start.*
 
 class StartActivity : AppCompatActivity() {
+
+    override fun onStart() {
+        super.onStart()
+        motionLayout.startLayoutAnimation()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -39,11 +45,6 @@ class StartActivity : AppCompatActivity() {
                 startActivity(Intent(this@StartActivity, MainActivity::class.java))
             }
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        motionLayout.startLayoutAnimation()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {

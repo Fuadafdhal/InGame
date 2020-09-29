@@ -18,6 +18,7 @@ limitations under the License.
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -25,14 +26,15 @@ import com.afdhal_fa.core.data.Resource
 import com.afdhal_fa.core.domain.model.Game
 import com.afdhal_fa.ingame.R
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_detail_game.*
 import kotlinx.android.synthetic.main.content_detail_game.*
 import kotlinx.android.synthetic.main.view_error.*
-import org.koin.android.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class DetailGameActivity : AppCompatActivity() {
 
-    private val detailGameViewModel: DetailGameViewModel by viewModel()
+    private val detailGameViewModel: DetailGameViewModel by viewModels()
 
     companion object {
         const val EXTRA_DATA = "extra_data"

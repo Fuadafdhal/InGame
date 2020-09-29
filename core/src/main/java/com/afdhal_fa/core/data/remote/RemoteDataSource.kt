@@ -25,8 +25,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import java.net.UnknownHostException
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RemoteDataSource(private val apiService: ApiService) {
+@Singleton
+class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
     suspend fun getAllGames(page: Int, page_size: Int): Flow<ApiResponse<List<GameResponse>>> {
         return flow {

@@ -22,20 +22,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afdhal_fa.core.data.Resource
 import com.afdhal_fa.core.ui.GamesAdapter
 import com.afdhal_fa.ingame.R
 import com.afdhal_fa.ingame.detail.DetailGameActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.view_error.*
-import org.koin.android.viewmodel.ext.android.viewModel
 
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    private val homeViewModel: HomeViewModel by viewModel()
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
