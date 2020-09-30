@@ -34,7 +34,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                     emitAll(loadFromDB().map { Resource.Success(it) })
                 }
                 is ApiResponse.Error -> {
-                    emit(Resource.Error(apiResponse.errorMessage))
+                    emit(Resource.Error(apiResponse.errorMessage, null))
                 }
             }
         } else {

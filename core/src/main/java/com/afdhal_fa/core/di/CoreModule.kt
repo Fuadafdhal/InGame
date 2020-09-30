@@ -24,6 +24,8 @@ import com.afdhal_fa.core.data.remote.RemoteDataSource
 import com.afdhal_fa.core.data.remote.network.ApiService
 import com.afdhal_fa.core.domain.repository.IGamesRepository
 import com.afdhal_fa.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -35,10 +37,15 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<GamesDatabase>().gamesDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("In-Game".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             GamesDatabase::class.java, "InGame.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
+
     }
 }
 

@@ -45,4 +45,10 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    implementation "com.airbnb.android:lottie:$lottie_version"
 }

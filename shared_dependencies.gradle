@@ -38,9 +38,12 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
-    implementation "com.airbnb.android:lottie:$lottie_version"
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary"
 
-    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+
+    //Security_Crypto
+    implementation "androidx.security:security-crypto:$crypto_version"
+
 
 }
