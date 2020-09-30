@@ -1,5 +1,5 @@
 # In-Game
-[![FuadAfdhal](https://circleci.com/gh/Fuadafdhal/In-Game.svg?style=svg)](https://app.circleci.com/pipelines/github/Fuadafdhal/In-Game)
+[![Fuadafdhal](https://circleci.com/gh/Fuadafdhal/In-Game.svg?style=svg)](https://app.circleci.com/pipelines/github/Fuadafdhal/In-Game)
 
 
 ```
