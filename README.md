@@ -1,6 +1,4 @@
 # In-Game
-[![Fuadafdhal](https://circleci.com/gh/Fuadafdhal/In-Game.svg?style=svg)](https://app.circleci.com/pipelines/github/Fuadafdhal/In-Game)
-
 
 ```
    Copyright 2020 Muh Fuad Afdhal
