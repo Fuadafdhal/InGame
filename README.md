@@ -1,6 +1,6 @@
 # In-Game
 
-[![Fuadafdhal](https://circleci.com/gh/arifaizin/MySimpleCleanArchitecture.svg?style=svg)](https://circleci.com/gh/Fuadafdhal/In-Game)
+[![Fuadafdhal](https://circleci.com/gh/Fuadafdhal/InGame.svg?style=svg)](https://circleci.com/gh/Fuadafdhal/InGame)
 
 ```
    Copyright 2020 Muh Fuad Afdhal
