@@ -36,7 +36,11 @@ class StartActivity : AppCompatActivity() {
             override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
-                startActivity(Intent(this@StartActivity, MainActivity::class.java))
+                startActivity(Intent(this@StartActivity, MainActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_CLEAR_TASK and Intent.FLAG_ACTIVITY_NEW_TASK
+                }).also {
+                    finish()
+                }
             }
         })
     }

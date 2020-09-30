@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
 
-            homeViewModel.games(1, 25).observe(viewLifecycleOwner, Observer { tourism ->
+            homeViewModel.games(1, 30).observe(viewLifecycleOwner, Observer { tourism ->
                 if (tourism != null) {
                     when (tourism) {
                         is Resource.Loading -> progress_shimmer.visibility = View.VISIBLE
