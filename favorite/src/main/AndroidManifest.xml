@@ -13,7 +13,7 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application android:name="com.afdhal_fa.ingame.MyApplication">
+    <application>
 
     </application>
 
