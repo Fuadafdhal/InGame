@@ -1,6 +1,6 @@
 # In-Game
 
-[![arifaizin](https://circleci.com/gh/arifaizin/MySimpleCleanArchitecture.svg?style=svg)](https://circleci.com/gh/arifaizin/MySimpleCleanArchitecture)
+[![FuadAfdhal](https://circleci.com/gh/arifaizin/MySimpleCleanArchitecture.svg?style=svg)](https://circleci.com/gh/arifaizin/MySimpleCleanArchitecture)
 
 ```
    Copyright 2020 Muh Fuad Afdhal
@@ -17,6 +17,4 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
-
-
 
